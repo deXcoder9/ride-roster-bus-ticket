@@ -15,7 +15,7 @@
     margin: auto;
 }
 .shadow-down{
-    box-shadow: 0px 4px 0px 0px  red;
+    box-shadow: 0px 4px 0px 0px  #1DD100;
 }
 .title-head{
     font-weight: bold;
@@ -34,7 +34,7 @@
     top: 10%;
     bottom: 10%;
     left: 50%;
-    border-left: 3px dotted #c0bbbb; /* Adjust border color and style as needed */
+    border-left: 3px dotted #FFFFFF; /* Adjust border color and style as needed */
   }
   .coupon-bg{
     --tw-bg-opacity: .54;
