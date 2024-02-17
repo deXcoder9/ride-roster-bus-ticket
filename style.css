@@ -14,13 +14,19 @@
     max-width: 1170px;
     margin: auto;
 }
+.vessel_2-0{
+    width: 90%;
+    max-width: 1440px;
+    margin: auto;
+}
 .shadow-down{
     box-shadow: 0px 4px 0px 0px  #1DD100;
 }
 .title-head{
     font-weight: bold;
-    font-size: 30px;
+    font-size: 35px;
     text-align: center;
+    font-family: "Raleway", sans-serif;
 }
 .b-radius{
     /* border-radius: 20; */
@@ -35,6 +41,20 @@
     bottom: 10%;
     left: 50%;
     border-left: 3px dotted #FFFFFF; /* Adjust border color and style as needed */
+  }
+.g-radius{
+    /* border-radius: 20; */
+    position: relative;
+    width: 20px;
+    height: 200px;
+}
+.g-radius::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 50%;
+    border-left: 3px dotted #1DD100; /* Adjust border color and style as needed */
   }
   .coupon-bg{
     --tw-bg-opacity: .54;
