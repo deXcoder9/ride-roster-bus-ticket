@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.font-raleway{
+    font-family: "Raleway", sans-serif;
+}
+.font-inter{
+    font-family: "Inter", sans-serif;
+}
+.vessel{
+    width: 90%;
+    max-width: 1170px;
+    margin: auto;
+}
+.shadow-down{
+    box-shadow: 0px 4px 0px 0px  red;
+}
+.title-head{
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+.b-radius{
+    /* border-radius: 20; */
+    position: relative;
+    width: 20px;
+    height: 200px;
+}
+.b-radius::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 50%;
+    border-left: 3px dotted #c0bbbb; /* Adjust border color and style as needed */
+  }
+  .coupon-bg{
+    --tw-bg-opacity: .54;
+    background-color: rgb(102 103 171 / var(--tw-bg-opacity));
+  }
+  .round-topLeft-bottomleft{
+    border-radius: 25px 0px 0px 25px;
+  }
+  .round-topRight-bottomRight{
+    border-radius: 0px 25px 25px 0px;
+  }
