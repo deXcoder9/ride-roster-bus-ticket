@@ -66,3 +66,20 @@
   .round-topRight-bottomRight{
     border-radius: 0px 25px 25px 0px;
   }
+  .dotted-line {
+    border-bottom: 1px dotted #000; /* 1px thickness, dotted style, black color */
+}
+  .dotted-line2 {
+    border-right: 1px dotted #000; /* 1px thickness, dotted style, black color */
+}
+.seat-btn{
+    padding: 15px 40px;
+    background-color:#8692921d ;
+    border-radius: 10px;
+}
+
+.carve-border-radius-top{
+    border-top-left-radius: 70px;
+    border-top-right-radius: 70px;
+    border-top: 2px solid #1DD100 ;
+}
