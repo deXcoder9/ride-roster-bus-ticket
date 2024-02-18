@@ -65,7 +65,7 @@ for (const seat of seats) {
 function applyCoupon() {
   const inputField = document.getElementById("input-field").value;
   console.log(typeof inputField);
-  if (inputField === "NEW 15") {
+  if (inputField === "NEW15") {
     document.getElementById("input-field").value = " ";
 
     const DiscountPriceOfTotal = (totalPrice * 15) / 100;
