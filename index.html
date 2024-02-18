@@ -117,7 +117,7 @@
           <div class="coupons flex rounded-2xl ">
             <div
               class="bg-[#F78C9C] -mr-[1px ]  w-[300px] h-[200px]  flex flex-col justify-center items-center round-topLeft-bottomleft text-left">
-              <h1 class="text-4xl font-bold ">15% OFF</h1>
+              <h1 class="text-4xl font-bold ">20% OFF</h1>
               <p class="font-bold text-base">on your next purchase</p>
               <p class="">use by March 2024</p>
             </div>
@@ -126,7 +126,7 @@
             </div>
             <div
               class="bg-[#F78C9C] w-[200px] h-[200px] -ml-[1px  ] flex flex-col justify-center items-center round-topRight-bottomRight">
-              <h1 class="text-2xl font-extrabold font-raleway">NEW15</h1>
+              <h1 class="text-2xl font-extrabold font-raleway">Couple 20</h1>
               <p>Coupon Code</p>
             </div>
           </div>
@@ -303,9 +303,13 @@
                 <h6>Total Price</h6>
                 <h6>BDT <span id="total_price">0</span></h6>
               </div>
-              <div class="flex justify-center mt-4">
-                <input type="text" placeholder="Have any coupons?" class="flex-1 rounded-lg px-4 py-3">
-                <button class="px-5  bg-[#1DD100] rounded-lg text-white ">Apply</button>
+              <div id="discountPriceContainer" class="flex justify-between pt-2 text-sm font-bold hidden">
+                <h6>Discount</h6>
+                <h6>BDT <span id="discount_Price">0</span></h6>
+              </div>
+              <div id="COupn_box" class="flex justify-center mt-4">
+                <input id="input-field" type="text" placeholder="Have any coupons?" class="flex-1 rounded-lg px-4 py-3">
+                <button onclick="applyCoupon()" class="px-5  bg-[#1DD100] rounded-lg text-white ">Apply</button>
               </div>
               <div class="flex font-bold text-sm justify-between mt-3">
                 <h5>Grand Total</h5>
@@ -393,7 +397,7 @@
     </footer>
   </div>
   <!-- <script src="script.js"></script> -->
-<script src="script2.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>
