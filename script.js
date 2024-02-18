@@ -78,8 +78,7 @@ function applyCoupon() {
     document.getElementById("COupn_box").classList.add("hidden");
     let leftMoney = grandTotal - DiscountPriceOfTotal;
     document.getElementById("grand_total").innerText = leftMoney;
-  }
-  else if (inputField === "Couple 20") {
+  } else if (inputField === "Couple 20") {
     document.getElementById("input-field").value = " ";
 
     const DiscountPriceOfTotal = (totalPrice * 20) / 100;
@@ -92,9 +91,21 @@ function applyCoupon() {
     document.getElementById("COupn_box").classList.add("hidden");
     let leftMoney = grandTotal - DiscountPriceOfTotal;
     document.getElementById("grand_total").innerText = leftMoney;
-  }
-   else {
+  } else {
     alert(" please put a valid coupon ");
     document.getElementById("input-field").value = " ";
+  }
+}
+
+function CompletePurchase() {
+  const inputfield_number = document.getElementById("inputFieldNumber");
+  // console.log();
+  if (inputfield_number.value.length == 11) {
+    document.getElementById("total_Page").classList.add("hidden");
+    document.getElementById("purchaseCompletePhase").classList.remove("hidden");
+  } else if (inputfield_number.value <= 0) {
+    alert("SELECT A SEAT & ENTER YOUR 11-DIGIT BD PHONE NUMBER");
+  } else {
+    console.log("SELECT A SEAT & ENTER YOUR 11-DIGIT BD PHONE NUMBER");
   }
 }

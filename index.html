@@ -19,6 +19,17 @@
 </head>
 
 <body>
+  <div id="purchaseCompletePhase" class="hidden flex justify-center items-center h-[100vh] bg-slate-200">
+    <div class="flex flex-col justify-center items-center px-36 py-28 rounded-2xl bg-white">
+      <img class="" src="assets/success.png" alt="">
+      <h3 class="pt-5 text-[#1DD100] font-bold text-xl">SUCCESS</h3>
+      <P class="font-bold pt-2">Thank you for Booking Our Bus Seats.</P>
+      <p class="font-bold pt-2 ">We are working hard to find the best sevice and deals for you.</p>
+      <p class="pb-7">Shortly you will find a confirmation in your email.</p>
+      <button class="text-white bg-[#1DD100] py-3 px-11 rounded-2xl">Continue</button>
+    </div>
+  </div>
+  <div id="total_Page" class="">
   <div class="vessel">
     <header class="my-4 ">
       <div class="navbar bg-base-100">
@@ -325,7 +336,7 @@
           </div>
           <div>
             <h4 class="font-bold text-sm py-3">Passsenger Number*</h4>
-            <input type="number" name="" id="" placeholder="Enter your phone number" required
+            <input id="inputFieldNumber" type="number" name="" id="" placeholder="Enter your phone number" required
               class="px-4 w-full py-2 border-[1px]  rounded-md">
           </div>
           <div>
@@ -333,7 +344,7 @@
             <input type="email" name="" id="" placeholder="Enter your email id"
               class="px-4 w-full py-2 border-[1px]  rounded-md">
           </div>
-          <button class="text-white bg-[#1DD100] w-full rounded-xl py-3 mt-6">Next</button>
+          <button id="next" onclick="CompletePurchase()" class="text-white bg-[#1DD100] w-full rounded-xl py-3 mt-6 hover:bg-[#1cd10058] hover:text-black "   >Next</button>
           <div class="flex justify-between pt-5">
             <p class="underline text-gray-500">Terms and Conditions</p>
             <p class="underline text-gray-500">Cancellation Policy</p>
@@ -343,7 +354,7 @@
     </div>
     </main>
 
-    <footer class="footer p-10 bg-[#282c37d7] text-white mt-28 ">
+    <footer class="footer p-10 bg-[#282c37f8] text-white mt-28 ">
       <nav class="pt-14">
         <h6 class="footer-title">Services</h6>
         <a class="link link-hover">Branding</a>
@@ -365,7 +376,7 @@
         <a class="link link-hover">Cookie policy</a>
       </nav>
     </footer>
-    <footer class="footer px-10 py-4 border-t bg-[#030712ca] text-white border-base-300">
+    <footer class="footer px-10 py-4 border-t bg-[#030712ec] text-white border-base-300">
       <aside class="items-center grid-flow-col">
         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
           clip-rule="evenodd" class="fill-current">
@@ -396,6 +407,7 @@
       </nav>
     </footer>
   </div>
+</div>
   <!-- <script src="script.js"></script> -->
 <script src="script.js"></script>
 </body>
