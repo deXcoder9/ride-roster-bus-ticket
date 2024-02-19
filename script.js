@@ -101,54 +101,21 @@ function applyCoupon() {
       document.getElementById("input-field").value = "";
     }
   } else {
-    alert("please atleaast 4 seats to apply that coupon!!");
+    alert("please select at leaast 4 seats to apply that coupon!!");
   }
 }
-
-// if (inputField === "NEW15") {
-//   document.getElementById("input-field").value = " ";
-
-//   const DiscountPriceOfTotal = (totalPrice * 15) / 100;
-//   totalPrice -= DiscountPriceOfTotal;
-//   console.log(DiscountPriceOfTotal);
-//   document
-//     .getElementById("discountPriceContainer")
-//     .classList.remove("hidden");
-//   document.getElementById("discount_Price").innerText = DiscountPriceOfTotal;
-//   document.getElementById("COupn_box").classList.add("hidden");
-//   let leftMoney = grandTotal - DiscountPriceOfTotal;
-//   document.getElementById("grand_total").innerText = leftMoney;
-// } else if (inputField === "Couple 20") {
-//   document.getElementById("input-field").value = " ";
-
-//   const DiscountPriceOfTotal = (totalPrice * 20) / 100;
-//   totalPrice -= DiscountPriceOfTotal;
-//   console.log(DiscountPriceOfTotal);
-//   document
-//     .getElementById("discountPriceContainer")
-//     .classList.remove("hidden");
-//   document.getElementById("discount_Price").innerText = DiscountPriceOfTotal;
-//   document.getElementById("COupn_box").classList.add("hidden");
-//   let leftMoney = grandTotal - DiscountPriceOfTotal;
-//   document.getElementById("grand_total").innerText = leftMoney;
-// } else {
-//   alert(" please put a valid coupon ");
-//   document.getElementById("input-field").value = " ";
-// }
-
-document.getElementById("next").addEventListener("click", () => {
-  // console.log(phoneNumberLength);
+document.getElementById("next").addEventListener("click", function () {
   const inputfield_number = document.getElementById("inputFieldNumber");
   if (totalSelectedSeats >= 1 && inputfield_number.value.length == 11) {
     document.getElementById("total_Page").classList.add("hidden");
     document.getElementById("purchaseCompletePhase").classList.remove("hidden");
   } else {
     if (totalSelectedSeats < 1 && inputfield_number.value.length < 11) {
-      alert("Please select one seat and your phone number");
+      alert("Please select one seat and provide your phone number");
     } else if (inputfield_number.value.length != 11) {
-      alert("Provide a valid phone number!");
+      alert("Provide a valid 11 Digit  phone number!");
     } else {
-      alert("Please select atleast one seat to confirm!");
+      alert("Please select at least one seat to confirm!");
     }
   }
 });
