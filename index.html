@@ -62,7 +62,7 @@
           </ul>
         </div>
         <div class="navbar-end">
-          <a
+          <a onclick="scrollToSection('bus_seats')" 
             class="btn bg-[#1cd10022] text-[#1DD100] border-1 border-green-500 hover:bg-transparent hover:border-1 text-[20px] px-6 hover:border-green-500">Bus
             <img src="assets/bus-icon.png" alt=""> </a>
         </div>
@@ -210,7 +210,7 @@
       <!-- second step -->
 
 
-      <section class="flex justify-center  ">
+      <section id="bus_seats" class="flex justify-center  ">
         <div class="dotted-line2 W-[700px] bg-white p-7 rounded-3xl">
           <h3 class="dotted-line font-bold text-xl pb-4">Select Your Seat</h3>
           <div class="flex justify-between dotted-line w-full py-5">
@@ -344,7 +344,7 @@
             <input type="email" name="" id="" placeholder="Enter your email id"
               class="px-4 w-full py-2 border-[1px]  rounded-md">
           </div>
-          <button id="next" onclick="CompletePurchase()" class="text-white bg-[#1DD100] w-full rounded-xl py-3 mt-6 hover:bg-[#1cd10058] hover:text-black "   >Next</button>
+          <button id="next"  class="text-white bg-[#1DD100] w-full rounded-xl py-3 mt-6 hover:bg-[#1cd10058] hover:text-black "   >Next</button>
           <div class="flex justify-between pt-5">
             <p class="underline text-gray-500">Terms and Conditions</p>
             <p class="underline text-gray-500">Cancellation Policy</p>

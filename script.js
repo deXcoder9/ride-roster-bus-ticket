@@ -1,6 +1,6 @@
 // scrooll function
 function scrollToSection(sectionId) {
-  var section = document.getElementById(sectionId);
+  let section = document.getElementById(sectionId);
   if (section) {
     section.scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -14,6 +14,7 @@ let totalPrice = 0;
 let totalSeatSelected = 0;
 let grandTotal = 0;
 let totalbooked = 0;
+let totalSelectedSeats = 0;
 
 for (const seat of seats) {
   seat.addEventListener("click", function selectSeat(event) {
@@ -25,6 +26,7 @@ for (const seat of seats) {
       grandTotal += 550;
       totalSeatSelected += 1;
       selectedSeat += 1;
+      totalSelectedSeats += 1;
       // selected seat
       const Sseat = document.getElementById("selected_seat_number");
       Sseat.innerText = selectedSeat;
@@ -65,47 +67,88 @@ for (const seat of seats) {
 function applyCoupon() {
   const inputField = document.getElementById("input-field").value;
   console.log(typeof inputField);
-  if (inputField === "NEW15") {
-    document.getElementById("input-field").value = " ";
+  if (totalSelectedSeats == 4) {
+    if (inputField === "NEW15") {
+      document.getElementById("input-field").value = "";
 
-    const DiscountPriceOfTotal = (totalPrice * 15) / 100;
-    totalPrice -= DiscountPriceOfTotal;
-    console.log(DiscountPriceOfTotal);
-    document
-      .getElementById("discountPriceContainer")
-      .classList.remove("hidden");
-    document.getElementById("discount_Price").innerText = DiscountPriceOfTotal;
-    document.getElementById("COupn_box").classList.add("hidden");
-    let leftMoney = grandTotal - DiscountPriceOfTotal;
-    document.getElementById("grand_total").innerText = leftMoney;
-  } else if (inputField === "Couple 20") {
-    document.getElementById("input-field").value = " ";
+      const DiscountPriceOfTotal = (totalPrice * 15) / 100;
+      totalPrice -= DiscountPriceOfTotal;
+      console.log(DiscountPriceOfTotal);
+      document
+        .getElementById("discountPriceContainer")
+        .classList.remove("hidden");
+      document.getElementById("discount_Price").innerText =
+        DiscountPriceOfTotal;
+      document.getElementById("COupn_box").classList.add("hidden");
+      let leftMoney = grandTotal - DiscountPriceOfTotal;
+      document.getElementById("grand_total").innerText = leftMoney;
+    } else if (inputField === "Couple 20") {
+      document.getElementById("input-field").value = "";
 
-    const DiscountPriceOfTotal = (totalPrice * 20) / 100;
-    totalPrice -= DiscountPriceOfTotal;
-    console.log(DiscountPriceOfTotal);
-    document
-      .getElementById("discountPriceContainer")
-      .classList.remove("hidden");
-    document.getElementById("discount_Price").innerText = DiscountPriceOfTotal;
-    document.getElementById("COupn_box").classList.add("hidden");
-    let leftMoney = grandTotal - DiscountPriceOfTotal;
-    document.getElementById("grand_total").innerText = leftMoney;
+      const DiscountPriceOfTotal = (totalPrice * 20) / 100;
+      totalPrice -= DiscountPriceOfTotal;
+      console.log(DiscountPriceOfTotal);
+      document
+        .getElementById("discountPriceContainer")
+        .classList.remove("hidden");
+      document.getElementById("discount_Price").innerText =
+        DiscountPriceOfTotal;
+      document.getElementById("COupn_box").classList.add("hidden");
+      let leftMoney = grandTotal - DiscountPriceOfTotal;
+      document.getElementById("grand_total").innerText = leftMoney;
+    } else {
+      alert(" please put a valid coupon ");
+      document.getElementById("input-field").value = "";
+    }
   } else {
-    alert(" please put a valid coupon ");
-    document.getElementById("input-field").value = " ";
+    alert("please atleaast 4 seats to apply that coupon!!");
   }
 }
 
-function CompletePurchase() {
+// if (inputField === "NEW15") {
+//   document.getElementById("input-field").value = " ";
+
+//   const DiscountPriceOfTotal = (totalPrice * 15) / 100;
+//   totalPrice -= DiscountPriceOfTotal;
+//   console.log(DiscountPriceOfTotal);
+//   document
+//     .getElementById("discountPriceContainer")
+//     .classList.remove("hidden");
+//   document.getElementById("discount_Price").innerText = DiscountPriceOfTotal;
+//   document.getElementById("COupn_box").classList.add("hidden");
+//   let leftMoney = grandTotal - DiscountPriceOfTotal;
+//   document.getElementById("grand_total").innerText = leftMoney;
+// } else if (inputField === "Couple 20") {
+//   document.getElementById("input-field").value = " ";
+
+//   const DiscountPriceOfTotal = (totalPrice * 20) / 100;
+//   totalPrice -= DiscountPriceOfTotal;
+//   console.log(DiscountPriceOfTotal);
+//   document
+//     .getElementById("discountPriceContainer")
+//     .classList.remove("hidden");
+//   document.getElementById("discount_Price").innerText = DiscountPriceOfTotal;
+//   document.getElementById("COupn_box").classList.add("hidden");
+//   let leftMoney = grandTotal - DiscountPriceOfTotal;
+//   document.getElementById("grand_total").innerText = leftMoney;
+// } else {
+//   alert(" please put a valid coupon ");
+//   document.getElementById("input-field").value = " ";
+// }
+
+document.getElementById("next").addEventListener("click", () => {
+  // console.log(phoneNumberLength);
   const inputfield_number = document.getElementById("inputFieldNumber");
-  // console.log();
-  if (inputfield_number.value.length == 11) {
+  if (totalSelectedSeats >= 1 && inputfield_number.value.length == 11) {
     document.getElementById("total_Page").classList.add("hidden");
     document.getElementById("purchaseCompletePhase").classList.remove("hidden");
-  } else if (inputfield_number.value <= 0) {
-    alert("SELECT A SEAT & ENTER YOUR 11-DIGIT BD PHONE NUMBER");
   } else {
-    console.log("SELECT A SEAT & ENTER YOUR 11-DIGIT BD PHONE NUMBER");
+    if (totalSelectedSeats < 1 && inputfield_number.value.length < 11) {
+      alert("Please select one seat and your phone number");
+    } else if (inputfield_number.value.length != 11) {
+      alert("Provide a valid phone number!");
+    } else {
+      alert("Please select atleast one seat to confirm!");
+    }
   }
-}
+});
